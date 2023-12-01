@@ -24,4 +24,30 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+
+  overflow: hidden;
+}
+
+.letter-wave {
+  display: inline-block;
+  animation-name: word-waving;
+  animation-duration: 4s;
+}
+
+@keyframes word-waving {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
