@@ -1,22 +1,20 @@
-interface Props {
-  title: string;
-}
-
-export default function PageTitle({ title }: Props) {
-  const titleArray = title.split("");
-  let spaceCount = 0;
-
+export default function PageTitle() {
+  const titlePage = "adnan zecheria";
+  const hoverPageList = ["about", "projects", "contact"];
   return (
-    <p className="text-9xl font-black tracking-widest text-center">
-      {titleArray.map((letter, index) => {
-        return letter === " " ? (
-          <br key={index} />
-        ) : (
-          <span className="letter-wave" key={index}>
-            {letter}
-          </span>
-        );
-      })}
-    </p>
+    <div className="text-9xl font-black tracking-widest text-center">
+      <h1>
+        {titlePage.split("").map((letter, index) => {
+          if (letter === " ") return <br key={index} />;
+          return (
+            <span
+              className={`inline-block letter-wave delay-${index}00ms`}
+              key={index}>
+              {letter}
+            </span>
+          );
+        })}
+      </h1>
+    </div>
   );
 }

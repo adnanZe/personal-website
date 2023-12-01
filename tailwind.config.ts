@@ -13,6 +13,13 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      keyframes: {
+        // letterWave: {
+        //   '0%, 100%': { transform: 'translateY(0)' },
+        //   '25%': { transform: 'translateY(-1em)' },
+        //   '75%': { transform: 'translateY(1em)' },
+        // }
+      }
     },
   },
   plugins: [],
