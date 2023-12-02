@@ -1,4 +1,3 @@
-import Image from "next/image";
 import PageTitle from "./components/pageTitle";
 
 export default function Home() {
