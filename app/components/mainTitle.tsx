@@ -1,4 +1,4 @@
-export default function PageTitle() {
+export default function MainTitle() {
   const firstName = "Adnan";
   const lastName = "Zecheria";
 

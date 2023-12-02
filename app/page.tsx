@@ -1,9 +1,9 @@
-import PageTitle from "./components/pageTitle";
+import MainTitle from "./components/mainTitle";
 
 export default function Home() {
   return (
     <main className="flex justify-center items-center h-screen">
-      <PageTitle />
+      <MainTitle />
     </main>
   );
 }
