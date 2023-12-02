@@ -7,7 +7,18 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        letterUp: 'letterUp 3s ease-in-out var(--delay, 0)',
+      },
+      keyframes: {
+        letterUp: {
+          '0%': { transform: 'translateY(100%)' },
+          "30%, 70%": { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(-100%)' }
+        },
+      }
+    },
   },
   plugins: [],
 }
