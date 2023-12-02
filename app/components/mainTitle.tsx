@@ -21,7 +21,7 @@ export default function MainTitle() {
   );
 
   return (
-    <div className="xl:text-9xl lg:text-8xl md:text-7xl text-6xl font-black tracking-widest text-center">
+    <div className="xl:text-12xl lg:text-11xl md:text-10xl max-[570px]:text-6xl max-[378px]:text-5xl text-8xl  font-black tracking-widest text-center">
       <div id="name">
         {renderLetters(firstName)}
         {renderLetters(lastName)}
