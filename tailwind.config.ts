@@ -15,6 +15,7 @@ const config: Config = {
       },
       animation: {
         letterUp: 'letterUp 3s ease-in-out var(--delay, 0)',
+        letterUpDisappear: 'letterUpDisappear 2s ease-in-out var(--delay, 0) forwards',
       },
       keyframes: {
         letterUp: {
@@ -22,6 +23,12 @@ const config: Config = {
           "30%, 70%": { transform: 'translateY(0)' },
           '100%': { transform: 'translateY(-100%)' }
         },
+        letterUpDisappear: {
+          '0%': { transform: 'translateY(100%)' },
+          "30%": { transform: 'translateY(0)' },
+          "70%": { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(0)' }
+        }
       }
     },
   },
