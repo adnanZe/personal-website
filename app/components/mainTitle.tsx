@@ -31,22 +31,27 @@ export default function MainTitle() {
   const renderLetters = useCallback(
     (name: string, isTitle = true) => (
       <div className="overflow-hidden">
-        {name.split("").map((letter, index) => (
-          <span
-            key={index}
-            className={`inline-block 
+        {name.split("").map((letter, index) => {
+          if (letter === " ")
+            return <span key={index} className="inline-block w-10"></span>;
+
+          return (
+            <span
+              key={index}
+              className={`inline-block 
             translate-y-full
             ${isTitle ? "animate-letterUp" : "animate-letterUpDisappear"}
             ${sofiaSansExtraCondensed.className}`}
-            style={
-              {
-                "--i": index,
-                "--delay": "calc(var(--i) * 100ms)",
-              } as CSSProperties
-            }>
-            {letter}
-          </span>
-        ))}
+              style={
+                {
+                  "--i": index,
+                  "--delay": "calc(var(--i) * 100ms)",
+                } as CSSProperties
+              }>
+              {letter}
+            </span>
+          );
+        })}
       </div>
     ),
     []
