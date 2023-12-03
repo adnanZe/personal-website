@@ -8,6 +8,12 @@ import {
 import { FIRST_NAME, LAST_NAME } from "../constants/name";
 import { ANIMATION_MILLISECONDS_NAME } from "../constants/settingsAnimations";
 import MenuHoverContext from "../store/menuHoverContext";
+import { Sofia_Sans_Extra_Condensed } from "next/font/google";
+
+const sofiaSansExtraCondensed = Sofia_Sans_Extra_Condensed({
+  subsets: ["latin"],
+  weight: ["400", "700", "1000"],
+});
 
 export default function MainTitle() {
   const [isVisible, setIsVisible] = useState(true);
@@ -28,9 +34,10 @@ export default function MainTitle() {
         {name.split("").map((letter, index) => (
           <span
             key={index}
-            className={`inline-block translate-y-full ${
-              isTitle ? "animate-letterUp" : "animate-letterUpDisappear"
-            }`}
+            className={`inline-block 
+            translate-y-full
+            ${isTitle ? "animate-letterUp" : "animate-letterUpDisappear"}
+            ${sofiaSansExtraCondensed.className}`}
             style={
               {
                 "--i": index,
@@ -46,7 +53,7 @@ export default function MainTitle() {
   );
 
   return (
-    <div className="xl:text-12xl lg:text-11xl md:text-10xl max-[570px]:text-6xl max-[378px]:text-5xl text-8xl  font-black tracking-widest text-center">
+    <div className="xl:text-12xl lg:text-11xl md:text-10xl max-[570px]:text-6xl max-[378px]:text-5xl text-8xl font-black tracking-widest text-center">
       {isVisible && (
         <div id="name">
           {renderLetters(FIRST_NAME)}
