@@ -19,7 +19,7 @@ export default function MainTitle() {
     const timer = setTimeout(() => {
       setIsVisible(false);
     }, ANIMATION_MILLISECONDS_NAME);
-    return () => clearTimeout(timer); // This will clear the timer if the component is unmounted before the 3 seconds.
+    return () => clearTimeout(timer);
   }, []);
 
   const renderLetters = useCallback(
@@ -44,24 +44,17 @@ export default function MainTitle() {
     ),
     []
   );
+
   return (
-    <div>
+    <div className="xl:text-12xl lg:text-11xl md:text-10xl max-[570px]:text-6xl max-[378px]:text-5xl text-8xl  font-black tracking-widest text-center">
       {isVisible && (
-        <div
-          id="name"
-          className="xl:text-12xl lg:text-11xl md:text-10xl max-[570px]:text-6xl max-[378px]:text-5xl text-8xl  font-black tracking-widest text-center">
+        <div id="name">
           {renderLetters(FIRST_NAME)}
           {renderLetters(LAST_NAME)}
         </div>
       )}
 
-      {hovered && (
-        <div
-          id="hovered-menu"
-          className="xl:text-10xl lg:text-9xl md:text-8xl max-[570px]:text-6xl max-[378px]:text-5xl text-8xl  font-black tracking-widest text-center">
-          {renderLetters(hovered, false)}
-        </div>
-      )}
+      {hovered && <div id="hovered-menu">{renderLetters(hovered, false)}</div>}
     </div>
   );
 }
