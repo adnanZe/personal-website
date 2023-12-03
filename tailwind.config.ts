@@ -9,9 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       fontSize: {
-        "10xl": "8.5rem",
-        "11xl": "11rem",
-        "12xl": "13rem",
+        "TitleResXXsm": "4rem",
+        "ResXXXsm": "4.75rem",
+        "ResXXsm": "6.5rem",
+        "ResXsm": "8.25rem",
+        "ResSm": "10rem",
+        "ResMd": "12rem",
+        "ResLg": "17rem",
+        "ResXl": "20rem",
       },
       animation: {
         letterUp: 'letterUp 3000ms ease-in-out var(--delay, 0)',

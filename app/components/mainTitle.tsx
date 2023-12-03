@@ -12,7 +12,7 @@ import { Sofia_Sans_Extra_Condensed } from "next/font/google";
 
 const sofiaSansExtraCondensed = Sofia_Sans_Extra_Condensed({
   subsets: ["latin"],
-  weight: ["400", "700", "1000"],
+  weight: ["400", "700"],
 });
 
 export default function MainTitle() {
@@ -58,9 +58,9 @@ export default function MainTitle() {
   );
 
   return (
-    <div className="xl:text-12xl lg:text-11xl md:text-10xl max-[570px]:text-6xl max-[378px]:text-5xl text-8xl font-black tracking-widest text-center">
+    <div className="xl:text-ResXl lg:text-ResLg md:text-ResMd sm:text-ResSm min-[525px]:text-ResXsm min-[425px]:text-ResXXsm min-[325px]:text-ResXXXsm text-TitleResXXsm font-bold tracking-normal text-center">
       {isVisible && (
-        <div id="name">
+        <div id="name" className="leading-none">
           {renderLetters(FIRST_NAME)}
           {renderLetters(LAST_NAME)}
         </div>
