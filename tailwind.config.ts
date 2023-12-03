@@ -15,7 +15,7 @@ const config: Config = {
       },
       animation: {
         letterUp: 'letterUp 3000ms ease-in-out var(--delay, 0)',
-        letterUpDisappear: 'letterUpDisappear 2s ease-in-out var(--delay, 0) forwards',
+        letterUpDisappear: 'letterUpDisappear 1500ms ease-in-out var(--delay, 0) forwards',
       },
       keyframes: {
         letterUp: {

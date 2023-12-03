@@ -21,31 +21,31 @@ export default function MenuItems() {
           className="bg-neutral-800 rounded-lg bg-opacity-60 flex items-end p-5 backdrop-blur cursor-pointer row-span-2 hover:bg-neutral-950 hover:bg-opacity-60 transition ease-in-out duration-500"
           onMouseEnter={() => handleHover("About me")}
           onMouseLeave={() => handleHoverOut()}>
-          About me
+          <span className="text-2xl">About me</span>
         </li>
         <li
           className="bg-neutral-800 rounded-lg bg-opacity-60 flex items-end p-5 backdrop-blur cursor-pointer row-span-2 hover:bg-neutral-950 hover:bg-opacity-60 transition ease-in-out duration-500"
           onMouseEnter={() => handleHover("Experiences")}
           onMouseLeave={() => handleHoverOut()}>
-          Experiences
+          <span className="text-2xl">Experiences</span>
         </li>
         <li
           className="bg-neutral-800 rounded-lg bg-opacity-60 flex items-end p-5 backdrop-blur cursor-pointer row-span-2 hover:bg-neutral-950 hover:bg-opacity-60 transition ease-in-out duration-500"
           onMouseEnter={() => handleHover("Projects")}
           onMouseLeave={() => handleHoverOut()}>
-          Projects
+          <span className="text-2xl">Projects</span>
         </li>
         <li
           className="bg-neutral-800 rounded-lg bg-opacity-60 flex items-end p-5 backdrop-blur cursor-pointer hover:bg-neutral-950 hover:bg-opacity-60 transition ease-in-out duration-500"
           onMouseEnter={() => handleHover("Contact")}
           onMouseLeave={() => handleHoverOut()}>
-          Contact
+          <span className="text-2xl">Contact</span>
         </li>
         <li
           className="bg-neutral-800 rounded-lg bg-opacity-60 flex items-end p-5 backdrop-blur cursor-pointer hover:bg-neutral-950 hover:bg-opacity-60 transition ease-in-out duration-500"
           onMouseEnter={() => handleHover("Settings")}
           onMouseLeave={() => handleHoverOut()}>
-          Settings
+          <span className="text-2xl">Settings</span>
         </li>
       </ol>
     </nav>
