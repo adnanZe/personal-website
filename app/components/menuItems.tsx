@@ -30,19 +30,19 @@ export default function MenuItems() {
           <span className="text-xl">Experiences</span>
         </li>
         <li
-          className="bg-neutral-800 rounded-lg bg-opacity-60 flex items-end p-5 backdrop-blur cursor-pointer row-span-2 col-span-2 hover:bg-neutral-950 hover:bg-opacity-60 transition ease-in-out duration-500"
+          className="bg-neutral-800 rounded-lg bg-opacity-60 flex items-end p-5 backdrop-blur cursor-pointer row-span-2 col-span-3 hover:bg-neutral-950 hover:bg-opacity-60 transition ease-in-out duration-500"
           onMouseEnter={() => handleHover("Projects")}
           onMouseLeave={() => handleHoverOut()}>
           <span className="text-xl">Projects</span>
         </li>
         <li
-          className="bg-neutral-800 rounded-lg bg-opacity-60 flex items-end p-5 backdrop-blur cursor-pointer col-span-4 hover:bg-neutral-950 hover:bg-opacity-60 transition ease-in-out duration-500"
+          className="bg-neutral-800 rounded-lg bg-opacity-60 flex items-end p-5 backdrop-blur cursor-pointer col-span-3 hover:bg-neutral-950 hover:bg-opacity-60 transition ease-in-out duration-500"
           onMouseEnter={() => handleHover("Contact")}
           onMouseLeave={() => handleHoverOut()}>
           <span className="text-xl">Contact</span>
         </li>
         <li
-          className="bg-neutral-800 rounded-lg bg-opacity-60 flex items-end p-5 backdrop-blur cursor-pointer col-span-4 hover:bg-neutral-950 hover:bg-opacity-60 transition ease-in-out duration-500"
+          className="bg-neutral-800 rounded-lg bg-opacity-60 flex items-end p-5 backdrop-blur cursor-pointer col-span-3 hover:bg-neutral-950 hover:bg-opacity-60 transition ease-in-out duration-500"
           onMouseEnter={() => handleHover("Settings")}
           onMouseLeave={() => handleHoverOut()}>
           <span className="text-xl">Settings</span>
