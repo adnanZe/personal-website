@@ -14,7 +14,7 @@ const config: Config = {
         "12xl": "13rem",
       },
       animation: {
-        letterUp: 'letterUp 3s ease-in-out var(--delay, 0)',
+        letterUp: 'letterUp 3000ms ease-in-out var(--delay, 0)',
         letterUpDisappear: 'letterUpDisappear 2s ease-in-out var(--delay, 0) forwards',
       },
       keyframes: {
