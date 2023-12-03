@@ -4,6 +4,8 @@ interface MenuHoverContextModel {
   hovered: string | null;
   handleHover: (item: string) => void;
   handleHoverOut: () => void;
+  setIsVisibleMenu: (isVisible: boolean) => void;
+  isVisibleMenu: boolean;
 }
 
 interface MenuHoverContextProviderProps {
@@ -16,6 +18,7 @@ export function MenuHoverContextProvider({
   children,
 }: MenuHoverContextProviderProps) {
   const [hovered, setHovered] = useState<string | null>(null);
+  const [isVisibleMenu, setIsVisibleMenu] = useState<boolean>(false);
 
   const handleHover = useCallback((item: string) => {
     setHovered(item);
@@ -26,7 +29,14 @@ export function MenuHoverContextProvider({
   }, []);
 
   return (
-    <MenuHoverContext.Provider value={{ hovered, handleHover, handleHoverOut }}>
+    <MenuHoverContext.Provider
+      value={{
+        hovered,
+        handleHover,
+        handleHoverOut,
+        isVisibleMenu,
+        setIsVisibleMenu,
+      }}>
       {children}
     </MenuHoverContext.Provider>
   );

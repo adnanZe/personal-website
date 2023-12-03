@@ -28,6 +28,13 @@ export default function MainTitle() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      hoveredCtx?.setIsVisibleMenu(true);
+    }, ANIMATION_MILLISECONDS_NAME / 2);
+    return () => clearTimeout(timer);
+  }, [hoveredCtx]);
+
   const renderLetters = useCallback(
     (name: string, isTitle = true) => (
       <div className="overflow-hidden">
