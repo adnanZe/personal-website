@@ -10,11 +10,11 @@ export default function MenuItems() {
     hoveredCtx?.isVisibleMenu && (
       <nav>
         <ol className="grid grid-cols-6 grid-rows-4 gap-4 absolute top-0 left-0 p-5 w-screen h-screen">
-          <MenuItem title="About me" rowSpan={2} colSpan={4} />
-          <MenuItem title="Experiences" rowSpan={2} colSpan={2} />
-          <MenuItem title="Projects" rowSpan={2} colSpan={3} />
-          <MenuItem title="Contact" rowSpan={1} colSpan={3} />
-          <MenuItem title="Settings" rowSpan={1} colSpan={3} />
+          <MenuItem title="About me" gridClassName="col-span-4 row-span-2" />
+          <MenuItem title="Experiences" gridClassName="col-span-2 row-span-2" />
+          <MenuItem title="Projects" gridClassName="col-span-3 row-span-2" />
+          <MenuItem title="Contact" gridClassName="col-span-3 row-span-1" />
+          <MenuItem title="Settings" gridClassName="col-span-3 row-span-1" />
         </ol>
       </nav>
     )

@@ -3,11 +3,10 @@ import MenuHoverContext from "../../store/menuHoverContext";
 
 interface MenuItemProps {
   title: string;
-  rowSpan: number;
-  colSpan: number;
+  gridClassName: string;
 }
 
-export default function MenuItem({ title, rowSpan, colSpan }: MenuItemProps) {
+export default function MenuItem({ title, gridClassName }: MenuItemProps) {
   const hoveredCtx = useContext(MenuHoverContext);
 
   const handleHover = useCallback(() => {
@@ -20,7 +19,7 @@ export default function MenuItem({ title, rowSpan, colSpan }: MenuItemProps) {
 
   return (
     <li
-      className={`row-span-${rowSpan} col-span-${colSpan}`}
+      className={gridClassName}
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverOut}>
       <div className="h-full w-full cursor-pointer animate-containerUp">
