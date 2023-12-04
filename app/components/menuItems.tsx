@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import MenuHoverContext from "../../store/menuHoverContext";
+import MenuHoverContext from "../store/menuHoverContext";
 import MenuItem from "./menuItem";
 
 export default function MenuItems() {

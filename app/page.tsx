@@ -1,7 +1,7 @@
 "use client";
 import { MenuHoverContextProvider } from "./store/menuHoverContext";
-import MainTitle from "./components/home/mainTitle";
-import MenuItems from "./components/home/menuItems";
+import MainTitle from "./components/mainTitle";
+import MenuItems from "./components/menuItems";
 
 export default function Home() {
   return (

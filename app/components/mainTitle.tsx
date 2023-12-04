@@ -5,9 +5,9 @@ import {
   useEffect,
   useState,
 } from "react";
-import { FIRST_NAME, LAST_NAME } from "../../constants/name";
-import { ANIMATION_MILLISECONDS_NAME } from "../../constants/settingsAnimations";
-import MenuHoverContext from "../../store/menuHoverContext";
+import { FIRST_NAME, LAST_NAME } from "../constants/name";
+import { ANIMATION_MILLISECONDS_NAME } from "../constants/settingsAnimations";
+import MenuHoverContext from "../store/menuHoverContext";
 import { Sofia_Sans_Extra_Condensed } from "next/font/google";
 
 const sofiaSansExtraCondensed = Sofia_Sans_Extra_Condensed({
