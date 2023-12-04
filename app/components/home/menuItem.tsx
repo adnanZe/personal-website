@@ -1,5 +1,6 @@
-import { useCallback, useContext } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import MenuHoverContext from "../../store/menuHoverContext";
+import { ANIMATION_MILLISECONDS_NAME } from "@/app/constants/settingsAnimations";
 
 interface MenuItemProps {
   title: string;
@@ -9,6 +10,8 @@ interface MenuItemProps {
 export default function MenuItem({ title, gridClassName }: MenuItemProps) {
   const hoveredCtx = useContext(MenuHoverContext);
 
+  const [isPointerEvents, setIsPointerEvents] = useState(false);
+
   const handleHover = useCallback(() => {
     hoveredCtx?.handleHover(title);
   }, [hoveredCtx, title]);
@@ -17,9 +20,19 @@ export default function MenuItem({ title, gridClassName }: MenuItemProps) {
     hoveredCtx?.handleHoverOut();
   }, [hoveredCtx]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsPointerEvents(true);
+    }, ANIMATION_MILLISECONDS_NAME);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <li
-      className={gridClassName}
+      className={
+        gridClassName + `${isPointerEvents ? "" : " pointer-events-none"}`
+      }
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverOut}>
       <div className="h-0 w-full cursor-pointer animate-containerUp flex justify-center items-end overflow-hidden">
