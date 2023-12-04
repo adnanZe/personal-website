@@ -13,8 +13,8 @@ export default function MenuItems() {
           <MenuItem title="About me" rowSpan={2} colSpan={4} />
           <MenuItem title="Experiences" rowSpan={2} colSpan={2} />
           <MenuItem title="Projects" rowSpan={2} colSpan={3} />
-          <MenuItem title="Contact" colSpan={3} />
-          <MenuItem title="Settings" colSpan={3} />
+          <MenuItem title="Contact" rowSpan={1} colSpan={3} />
+          <MenuItem title="Settings" rowSpan={1} colSpan={3} />
         </ol>
       </nav>
     )
