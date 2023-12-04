@@ -1,5 +1,5 @@
 import { useCallback, useContext } from "react";
-import MenuHoverContext from "../store/menuHoverContext";
+import MenuHoverContext from "../../store/menuHoverContext";
 
 interface MenuItemProps {
   title: string;
