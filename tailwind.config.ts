@@ -36,9 +36,10 @@ const config: Config = {
           '100%': { transform: 'translateY(0)' }
         },
         containerUp: {
-          "0%": { height: "0%", padding: "0", visibility: "visible" },
+          "0%": { height: "0%", padding: "0", visibility: "visible", pointerEvents: "none" },
           "20%": { padding: "0" },
-          "100%": { height: "100%" }
+          "99%": { pointerEvents: "none" },
+          "100%": { height: "100%", pointerEvents: "auto" }
         }
       }
     },
