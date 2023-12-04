@@ -1,2 +1,3 @@
 export const ANIMATION_MILLISECONDS_NAME = 3000 + 700;
-// also check tailwind.config.js - animation.letterUp and added 700ms for the delay from Zecheria
+export const ANIMATION_MILLISECONDS_MENU = ANIMATION_MILLISECONDS_NAME / 2;
+export const ANIMATION_MILLISECONDS_HOVER_MENU_DELAY = 1000;

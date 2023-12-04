@@ -6,9 +6,14 @@ import {
   useState,
 } from "react";
 import { FIRST_NAME, LAST_NAME } from "../../constants/name";
-import { ANIMATION_MILLISECONDS_NAME } from "../../constants/settingsAnimations";
+import {
+  ANIMATION_MILLISECONDS_HOVER_MENU_DELAY,
+  ANIMATION_MILLISECONDS_MENU,
+  ANIMATION_MILLISECONDS_NAME,
+} from "../../constants/settingsAnimations";
 import MenuHoverContext from "../../store/menuHoverContext";
 import { Sofia_Sans_Extra_Condensed } from "next/font/google";
+import { TimerOptions } from "node:timers";
 
 const sofiaSansExtraCondensed = Sofia_Sans_Extra_Condensed({
   subsets: ["latin"],
@@ -17,6 +22,7 @@ const sofiaSansExtraCondensed = Sofia_Sans_Extra_Condensed({
 
 export default function MainTitle() {
   const [isVisible, setIsVisible] = useState(true);
+  const [canShowHovered, setCanShowHovered] = useState(false);
 
   const hoveredCtx = useContext(MenuHoverContext);
   const hovered = hoveredCtx?.hovered;
@@ -31,9 +37,26 @@ export default function MainTitle() {
   useEffect(() => {
     const timer = setTimeout(() => {
       hoveredCtx?.setIsVisibleMenu(true);
-    }, ANIMATION_MILLISECONDS_NAME / 2);
+    }, ANIMATION_MILLISECONDS_MENU);
     return () => clearTimeout(timer);
   }, [hoveredCtx]);
+
+  useEffect(() => {
+    let timer: null | ReturnType<typeof setTimeout> = null;
+    if (hovered) {
+      timer = setTimeout(() => {
+        setCanShowHovered(true);
+      }, ANIMATION_MILLISECONDS_HOVER_MENU_DELAY);
+    } else {
+      setCanShowHovered(false);
+    }
+
+    return () => {
+      if (timer) {
+        clearTimeout(timer);
+      }
+    };
+  }, [hovered]);
 
   const renderLetters = useCallback(
     (name: string, isTitle = true) => (
@@ -73,7 +96,9 @@ export default function MainTitle() {
         </div>
       )}
 
-      {hovered && <div id="hovered-menu">{renderLetters(hovered, false)}</div>}
+      {hovered && canShowHovered && (
+        <div id="hovered-menu">{renderLetters(hovered, false)}</div>
+      )}
     </div>
   );
 }

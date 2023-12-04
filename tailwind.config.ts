@@ -20,8 +20,8 @@ const config: Config = {
       },
       animation: {
         letterUp: 'letterUp 3000ms ease-in-out var(--delay, 0)',
-        letterUpDisappear: 'letterUpDisappear 1500ms ease-in-out var(--delay, 0) forwards',
-        containerUp: 'containerUp 3000ms forwards',
+        letterUpDisappear: 'letterUpDisappear 1500ms ease-in-out calc(var(--delay) * 0.25) forwards',
+        containerUp: 'containerUp 3000ms ease-in-out forwards',
       },
       keyframes: {
         letterUp: {
@@ -36,11 +36,14 @@ const config: Config = {
           '100%': { transform: 'translateY(0)' }
         },
         containerUp: {
-          "0%": { height: "0%", padding: "0", visibility: "visible", pointerEvents: "none" },
-          "20%": { padding: "0" },
-          "99%": { pointerEvents: "none" },
-          "100%": { height: "100%", pointerEvents: "auto" }
+          to: { height: "100%" }
         }
+        // containerUp: {
+        //   "0%": { height: "0%", padding: "0", visibility: "visible", pointerEvents: "none" },
+        //   "20%": { padding: "0" },
+        //   "99%": { pointerEvents: "none" },
+        //   "100%": { height: "100%", pointerEvents: "auto" }
+        // }
       }
     },
   },
