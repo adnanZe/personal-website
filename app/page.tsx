@@ -6,7 +6,7 @@ import MenuItems from "./components/home/menuItems";
 export default function Home() {
   return (
     <MenuHoverContextProvider>
-      <main className="flex justify-center items-center h-screen relative">
+      <main className="flex justify-center items-center h-screen">
         <MainTitle />
         <MenuItems />
       </main>

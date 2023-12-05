@@ -31,11 +31,12 @@ export default function MenuItem({ title, gridClassName }: MenuItemProps) {
   return (
     <li
       className={
-        gridClassName + `${isPointerEvents ? "" : " pointer-events-none"}`
+        gridClassName +
+        `${isPointerEvents ? " cursor-pointer" : " pointer-events-none"}`
       }
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverOut}>
-      <div className="h-0 w-full cursor-pointer animate-containerUp flex justify-center items-end overflow-hidden">
+      <div className="h-full w-full animate-containerUp flex justify-center items-end">
         <div className="h-full w-full bg-neutral-800 rounded-lg bg-opacity-60 flex items-end p-5 backdrop-blur hover:bg-neutral-950 hover:bg-opacity-60 transition ease-in-out duration-500">
           <span className="text-xl">{title}</span>
         </div>

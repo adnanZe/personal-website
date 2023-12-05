@@ -36,9 +36,9 @@ const config: Config = {
           '100%': { transform: 'translateY(0)' }
         },
         containerUp: {
-          "0%": { height: "0%" },
-          "100%": { height: "100%" }
-        }
+          "0%": { transform: 'scaleY(0)', transformOrigin: "bottom" },
+          "100%": { height: 'scaleY(1)', transformOrigin: "bottom" }
+        },
       }
     },
   },
