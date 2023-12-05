@@ -1,5 +1,5 @@
 import { useCallback, useContext, useEffect, useState } from "react";
-import MenuHoverContext from "../../store/menuHoverContext";
+import AnimationContext from "../../store/animationContext";
 import { ANIMATE_MS_NAME } from "@/app/constants/animationSettings";
 
 interface MenuItemProps {
@@ -8,16 +8,16 @@ interface MenuItemProps {
 }
 
 export default function MenuItem({ title, gridClassName }: MenuItemProps) {
-  const hoveredCtx = useContext(MenuHoverContext);
+  const hoveredCtx = useContext(AnimationContext);
 
   const [isPointerEvents, setIsPointerEvents] = useState(false);
 
   const handleHover = useCallback(() => {
-    hoveredCtx?.handleHover(title);
+    hoveredCtx?.handleMenuItemHover(title);
   }, [hoveredCtx, title]);
 
   const handleHoverOut = useCallback(() => {
-    hoveredCtx?.handleHoverOut();
+    hoveredCtx?.handleMenuItemHoverOut();
   }, [hoveredCtx]);
 
   useEffect(() => {

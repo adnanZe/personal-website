@@ -11,15 +11,15 @@ import {
   ANIMATE_MS_MENU,
   ANIMATE_MS_NAME,
 } from "../../constants/animationSettings";
-import MenuHoverContext from "../../store/menuHoverContext";
+import AnimationContext from "../../store/animationContext";
 import { MAIN_FONT_TITLE } from "@/app/constants/fonts";
 
 export default function MainTitle() {
   const [isVisible, setIsVisible] = useState(true);
   const [canShowHovered, setCanShowHovered] = useState(false);
 
-  const hoveredCtx = useContext(MenuHoverContext);
-  const hovered = hoveredCtx?.hovered;
+  const hoveredCtx = useContext(AnimationContext);
+  const hovered = hoveredCtx?.menuItemHovered;
 
   useEffect(() => {
     const timer = setTimeout(() => {

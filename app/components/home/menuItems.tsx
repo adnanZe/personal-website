@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import MenuHoverContext from "../../store/menuHoverContext";
+import AnimationContext from "../../store/animationContext";
 import MenuItem from "./menuItem";
 
 export default function MenuItems() {
-  const hoveredCtx = useContext(MenuHoverContext);
+  const hoveredCtx = useContext(AnimationContext);
 
   return (
     hoveredCtx &&

@@ -1,22 +1,22 @@
 import { createContext, ReactNode, useCallback, useState } from "react";
 
-interface MenuHoverContextModel {
-  hovered: string | null;
-  handleHover: (item: string) => void;
-  handleHoverOut: () => void;
+interface AnimationContextModel {
+  menuItemHovered: string | null;
+  handleMenuItemHover: (item: string) => void;
+  handleMenuItemHoverOut: () => void;
   setIsVisibleMenu: (isVisible: boolean) => void;
   isVisibleMenu: boolean;
 }
 
-interface MenuHoverContextProviderProps {
+interface AnimationContextProviderProps {
   children: ReactNode;
 }
 
-const MenuHoverContext = createContext<MenuHoverContextModel | null>(null);
+const AnimationContext = createContext<AnimationContextModel | null>(null);
 
-export function MenuHoverContextProvider({
+export function AnimationContextProvider({
   children,
-}: MenuHoverContextProviderProps) {
+}: AnimationContextProviderProps) {
   const [hovered, setHovered] = useState<string | null>(null);
   const [isVisibleMenu, setIsVisibleMenu] = useState<boolean>(false);
 
@@ -29,17 +29,17 @@ export function MenuHoverContextProvider({
   }, []);
 
   return (
-    <MenuHoverContext.Provider
+    <AnimationContext.Provider
       value={{
-        hovered,
-        handleHover,
-        handleHoverOut,
+        menuItemHovered: hovered,
+        handleMenuItemHover: handleHover,
+        handleMenuItemHoverOut: handleHoverOut,
         isVisibleMenu,
         setIsVisibleMenu,
       }}>
       {children}
-    </MenuHoverContext.Provider>
+    </AnimationContext.Provider>
   );
 }
 
-export default MenuHoverContext;
+export default AnimationContext;
