@@ -18,8 +18,8 @@ export default function MainTitle() {
   const [isVisible, setIsVisible] = useState(true);
   const [canShowHovered, setCanShowHovered] = useState(false);
 
-  const hoveredCtx = useContext(AnimationContext);
-  const hovered = hoveredCtx?.menuItemHovered;
+  const animationCtx = useContext(AnimationContext);
+  const hovered = animationCtx?.menuItemHovered;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -30,10 +30,10 @@ export default function MainTitle() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      hoveredCtx?.setIsVisibleMenu(true);
+      animationCtx?.setIsVisibleMenu(true);
     }, ANIMATE_MS_MENU);
     return () => clearTimeout(timer);
-  }, [hoveredCtx]);
+  }, [animationCtx]);
 
   useEffect(() => {
     let timer: null | ReturnType<typeof setTimeout> = null;

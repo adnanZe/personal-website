@@ -8,17 +8,17 @@ interface MenuItemProps {
 }
 
 export default function MenuItem({ title, gridClassName }: MenuItemProps) {
-  const hoveredCtx = useContext(AnimationContext);
+  const animationCtx = useContext(AnimationContext);
 
   const [isPointerEvents, setIsPointerEvents] = useState(false);
 
   const handleHover = useCallback(() => {
-    hoveredCtx?.handleMenuItemHover(title);
-  }, [hoveredCtx, title]);
+    animationCtx?.handleMenuItemHover(title);
+  }, [animationCtx, title]);
 
   const handleHoverOut = useCallback(() => {
-    hoveredCtx?.handleMenuItemHoverOut();
-  }, [hoveredCtx]);
+    animationCtx?.handleMenuItemHoverOut();
+  }, [animationCtx]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
