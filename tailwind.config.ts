@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import { ANIMATE_MS_MENU, ANIMATE_MS_NAME, TRANSITION_TIMING } from './app/constants/animationSettings';
 
 const config: Config = {
   content: [
@@ -19,9 +20,9 @@ const config: Config = {
         "ResXl": "20rem",
       },
       animation: {
-        ascendLetters: 'ascendLettersAnimation 3000ms ease-in-out var(--delay, 0)',
-        fadeOutLetters: 'fadeOutLettersAnimation 1500ms ease-in-out calc(var(--delay) * 0.25) forwards',
-        elevateContainer: 'elevateContainerAnimation 3000ms ease-in-out forwards',
+        ascendLetters: `ascendLettersAnimation ${ANIMATE_MS_NAME}ms ${TRANSITION_TIMING} var(--delay, 0)`,
+        fadeOutLetters: `fadeOutLettersAnimation ${ANIMATE_MS_MENU}ms ${TRANSITION_TIMING} calc(var(--delay) * 0.25) forwards`,
+        elevateContainer: `elevateContainerAnimation ${ANIMATE_MS_MENU}ms ${TRANSITION_TIMING} forwards`,
       },
       keyframes: {
         ascendLettersAnimation: {

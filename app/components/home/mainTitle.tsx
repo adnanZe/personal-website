@@ -7,10 +7,10 @@ import {
 } from "react";
 import { FIRST_NAME, LAST_NAME } from "../../constants/name";
 import {
-  ANIMATION_MILLISECONDS_HOVER_MENU_DELAY,
-  ANIMATION_MILLISECONDS_MENU,
-  ANIMATION_MILLISECONDS_NAME,
-} from "../../constants/settingsAnimations";
+  ANIMATE_MS_HOVER_MENU_DELAY,
+  ANIMATE_MS_MENU,
+  ANIMATE_MS_NAME,
+} from "../../constants/animationSettings";
 import MenuHoverContext from "../../store/menuHoverContext";
 import { Sofia_Sans_Extra_Condensed } from "next/font/google";
 
@@ -30,14 +30,14 @@ export default function MainTitle() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, ANIMATION_MILLISECONDS_NAME);
+    }, ANIMATE_MS_NAME);
     return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       hoveredCtx?.setIsVisibleMenu(true);
-    }, ANIMATION_MILLISECONDS_MENU);
+    }, ANIMATE_MS_MENU);
     return () => clearTimeout(timer);
   }, [hoveredCtx]);
 
@@ -46,7 +46,7 @@ export default function MainTitle() {
     if (hovered) {
       timer = setTimeout(() => {
         setCanShowHovered(true);
-      }, ANIMATION_MILLISECONDS_HOVER_MENU_DELAY);
+      }, ANIMATE_MS_HOVER_MENU_DELAY);
     } else {
       setCanShowHovered(false);
     }

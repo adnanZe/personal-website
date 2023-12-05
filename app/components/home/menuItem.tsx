@@ -1,6 +1,6 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import MenuHoverContext from "../../store/menuHoverContext";
-import { ANIMATION_MILLISECONDS_NAME } from "@/app/constants/settingsAnimations";
+import { ANIMATE_MS_NAME } from "@/app/constants/animationSettings";
 
 interface MenuItemProps {
   title: string;
@@ -23,7 +23,7 @@ export default function MenuItem({ title, gridClassName }: MenuItemProps) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsPointerEvents(true);
-    }, ANIMATION_MILLISECONDS_NAME);
+    }, ANIMATE_MS_NAME);
 
     return () => clearTimeout(timer);
   }, []);
