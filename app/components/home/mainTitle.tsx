@@ -13,11 +13,11 @@ import {
 } from "../../constants/settingsAnimations";
 import MenuHoverContext from "../../store/menuHoverContext";
 import { Sofia_Sans_Extra_Condensed } from "next/font/google";
-import { TimerOptions } from "node:timers";
 
 const sofiaSansExtraCondensed = Sofia_Sans_Extra_Condensed({
   subsets: ["latin"],
   weight: ["400", "700"],
+  fallback: ["sans-serif"],
 });
 
 export default function MainTitle() {
@@ -70,7 +70,7 @@ export default function MainTitle() {
               key={index}
               className={`inline-block 
             translate-y-full
-            ${isTitle ? "animate-letterUp" : "animate-letterUpDisappear"}
+            ${isTitle ? "animate-ascendLetters" : "animate-fadeOutLetters"}
             ${sofiaSansExtraCondensed.className}`}
               style={
                 {

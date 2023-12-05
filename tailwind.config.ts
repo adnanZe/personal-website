@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -19,23 +19,21 @@ const config: Config = {
         "ResXl": "20rem",
       },
       animation: {
-        letterUp: 'letterUp 3000ms ease-in-out var(--delay, 0)',
-        letterUpDisappear: 'letterUpDisappear 1500ms ease-in-out calc(var(--delay) * 0.25) forwards',
-        containerUp: 'containerUp 3700ms ease-in-out forwards',
+        ascendLetters: 'ascendLettersAnimation 3000ms ease-in-out var(--delay, 0)',
+        fadeOutLetters: 'fadeOutLettersAnimation 1500ms ease-in-out calc(var(--delay) * 0.25) forwards',
+        elevateContainer: 'elevateContainerAnimation 3000ms ease-in-out forwards',
       },
       keyframes: {
-        letterUp: {
+        ascendLettersAnimation: {
           '0%': { transform: 'translateY(100%)' },
           "30%, 70%": { transform: 'translateY(0)' },
           '100%': { transform: 'translateY(-100%)' }
         },
-        letterUpDisappear: {
+        fadeOutLettersAnimation: {
           '0%': { transform: 'translateY(100%)' },
-          "30%": { transform: 'translateY(0)' },
-          "70%": { transform: 'translateY(0)' },
-          '100%': { transform: 'translateY(0)' }
+          "30%, 100%": { transform: 'translateY(0)' },
         },
-        containerUp: {
+        elevateContainerAnimation: {
           "0%": { transform: 'scaleY(0)', transformOrigin: "bottom" },
           "100%": { height: 'scaleY(1)', transformOrigin: "bottom" }
         },

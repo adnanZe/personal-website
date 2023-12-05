@@ -5,6 +5,7 @@ import "./styles/globals.css";
 const sofiaSans = Sofia_Sans({
   subsets: ["latin"],
   weight: ["400", "700", "900"],
+  fallback: ["sans-serif"],
 });
 
 export const metadata: Metadata = {
