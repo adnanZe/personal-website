@@ -12,13 +12,7 @@ import {
   ANIMATE_MS_NAME,
 } from "../../constants/animationSettings";
 import MenuHoverContext from "../../store/menuHoverContext";
-import { Sofia_Sans_Extra_Condensed } from "next/font/google";
-
-const sofiaSansExtraCondensed = Sofia_Sans_Extra_Condensed({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  fallback: ["sans-serif"],
-});
+import { MAIN_FONT_TITLE } from "@/app/constants/fonts";
 
 export default function MainTitle() {
   const [isVisible, setIsVisible] = useState(true);
@@ -71,7 +65,7 @@ export default function MainTitle() {
               className={`inline-block 
             translate-y-full
             ${isTitle ? "animate-ascendLetters" : "animate-fadeOutLetters"}
-            ${sofiaSansExtraCondensed.className}`}
+            ${MAIN_FONT_TITLE.className}`}
               style={
                 {
                   "--i": index,

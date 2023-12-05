@@ -27,7 +27,7 @@ const config: Config = {
       keyframes: {
         ascendLettersAnimation: {
           '0%': { transform: 'translateY(100%)' },
-          "30%, 70%": { transform: 'translateY(0)' },
+          "30%, 90%": { transform: 'translateY(0)' },
           '100%': { transform: 'translateY(-100%)' }
         },
         fadeOutLettersAnimation: {
