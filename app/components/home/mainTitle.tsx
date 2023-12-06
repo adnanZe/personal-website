@@ -6,7 +6,7 @@ import AnimatedText from "../animatedText";
 export default function MainTitle() {
   const animationCtx = useContext(AnimationContext);
 
-  const hovered = animationCtx.menuItemHovered;
+  const hoveredMenu = animationCtx.menuItemHovered;
   const isTitleAnimationComplete = animationCtx.isTitleAnimationComplete;
 
   return (
@@ -18,9 +18,9 @@ export default function MainTitle() {
         </div>
       )}
 
-      {hovered && (
+      {hoveredMenu && (
         <div id="hovered-menu">
-          <AnimatedText name={hovered} />
+          <AnimatedText name={hoveredMenu} />
         </div>
       )}
     </div>
