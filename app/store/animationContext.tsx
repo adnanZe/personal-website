@@ -3,15 +3,19 @@ import {
   ReactNode,
   useCallback,
   useEffect,
+  useRef,
   useState,
 } from "react";
-import { ANIMATE_MS_NAME as ANIMATION_DURATION_TITLE } from "../constants/animationSettings";
+import {
+  ANIMATE_MS_NAME as ANIMATION_DURATION_TITLE,
+  ANIMATE_MS_MENU as ANIMATION_DURATION_MENU,
+  ANIMATE_MS_HOVER_MENU_DELAY as ANIMATION_DURATION_HOVER_MENU_DELAY,
+} from "../constants/animationSettings";
 
 interface AnimationContextModel {
   menuItemHovered: string | null;
   handleMenuItemHover: (item: string) => void;
   handleMenuItemHoverOut: () => void;
-  setIsVisibleMenu: (isVisible: boolean) => void;
   isVisibleMenu: boolean;
   isTitleAnimationComplete: boolean;
 }
@@ -25,7 +29,6 @@ const AnimationContext = createContext<AnimationContextModel>({
   handleMenuItemHover: () => {},
   handleMenuItemHoverOut: () => {},
   isVisibleMenu: false,
-  setIsVisibleMenu: () => {},
   isTitleAnimationComplete: false,
 });
 
@@ -36,6 +39,7 @@ export function AnimationContextProvider({
   const [isVisibleMenu, setIsVisibleMenu] = useState<boolean>(false);
   const [isTitleAnimationComplete, setIsTitleAnimationComplete] =
     useState<boolean>(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -45,8 +49,28 @@ export function AnimationContextProvider({
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisibleMenu(true);
+    }, ANIMATION_DURATION_MENU);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleMenuItemHover = useCallback((item: string) => {
-    setMenuItemHovered(item);
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+
+    timerRef.current = setTimeout(() => {
+      setMenuItemHovered(item);
+    }, ANIMATION_DURATION_HOVER_MENU_DELAY);
+
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
   }, []);
 
   const handleMenuItemHoverOut = useCallback(() => {
@@ -60,7 +84,6 @@ export function AnimationContextProvider({
         handleMenuItemHover,
         handleMenuItemHoverOut,
         isVisibleMenu,
-        setIsVisibleMenu,
         isTitleAnimationComplete,
       }}>
       {children}
