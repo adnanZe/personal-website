@@ -1,6 +1,5 @@
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useContext } from "react";
 import AnimationContext from "../../store/animationContext";
-import { ANIMATE_MS_NAME } from "@/app/constants/animationSettings";
 
 interface MenuItemProps {
   title: string;
@@ -10,8 +9,6 @@ interface MenuItemProps {
 export default function MenuItem({ title, gridClassName }: MenuItemProps) {
   const animationCtx = useContext(AnimationContext);
 
-  const [isPointerEvents, setIsPointerEvents] = useState(false);
-
   const handleHover = useCallback(() => {
     animationCtx?.handleMenuItemHover(title);
   }, [animationCtx, title]);
@@ -20,19 +17,15 @@ export default function MenuItem({ title, gridClassName }: MenuItemProps) {
     animationCtx?.handleMenuItemHoverOut();
   }, [animationCtx]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsPointerEvents(true);
-    }, ANIMATE_MS_NAME);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <li
       className={
         gridClassName +
-        `${isPointerEvents ? " cursor-pointer" : " pointer-events-none"}`
+        `${
+          animationCtx?.isTitleAnimationComplete
+            ? " cursor-pointer"
+            : " pointer-events-none"
+        }`
       }
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverOut}>
