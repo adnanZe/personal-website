@@ -3,11 +3,10 @@ import AnimationContext from "../../store/animationContext";
 import MenuItem from "./menuItem";
 
 export default function MenuItems() {
-  const animationCtx = useContext(AnimationContext);
+  const isVisibleMenu = useContext(AnimationContext).isVisibleMenu;
 
   return (
-    animationCtx &&
-    animationCtx?.isVisibleMenu && (
+    isVisibleMenu && (
       <nav>
         <ol className="grid grid-cols-6 grid-rows-4 gap-5 absolute top-0 left-0 p-5 w-screen h-screen">
           <MenuItem title="About me" gridClassName="col-span-4 row-span-2" />

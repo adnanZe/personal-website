@@ -15,18 +15,10 @@ import AnimationContext from "../../store/animationContext";
 import { MAIN_FONT_TITLE } from "@/app/constants/fonts";
 
 export default function MainTitle() {
-  const [isVisible, setIsVisible] = useState(true);
   const [canShowHovered, setCanShowHovered] = useState(false);
 
   const animationCtx = useContext(AnimationContext);
   const hovered = animationCtx?.menuItemHovered;
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-    }, ANIMATE_MS_NAME);
-    return () => clearTimeout(timer);
-  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -83,7 +75,7 @@ export default function MainTitle() {
 
   return (
     <div className="xl:text-ResXl lg:text-ResLg md:text-ResMd sm:text-ResSm min-[525px]:text-ResXsm min-[425px]:text-ResXXsm min-[325px]:text-ResXXXsm text-TitleResXXsm font-bold tracking-normal text-center">
-      {isVisible && (
+      {!animationCtx?.isTitleAnimationComplete && (
         <div id="name" className="leading-none">
           {renderLetters(FIRST_NAME)}
           {renderLetters(LAST_NAME)}

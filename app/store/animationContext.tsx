@@ -20,7 +20,14 @@ interface AnimationContextProviderProps {
   children: ReactNode;
 }
 
-const AnimationContext = createContext<AnimationContextModel | null>(null);
+const AnimationContext = createContext<AnimationContextModel>({
+  menuItemHovered: null,
+  handleMenuItemHover: () => {},
+  handleMenuItemHoverOut: () => {},
+  isVisibleMenu: false,
+  setIsVisibleMenu: () => {},
+  isTitleAnimationComplete: false,
+});
 
 export function AnimationContextProvider({
   children,
