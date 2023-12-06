@@ -9,12 +9,14 @@ interface MenuItemProps {
 export default function MenuItem({ title, gridClassName }: MenuItemProps) {
   const animationCtx = useContext(AnimationContext);
 
+  const isTitleAnimationComplete = animationCtx?.isTitleAnimationComplete;
+
   const handleHover = useCallback(() => {
-    animationCtx?.handleMenuItemHover(title);
+    animationCtx.handleMenuItemHover(title);
   }, [animationCtx, title]);
 
   const handleHoverOut = useCallback(() => {
-    animationCtx?.handleMenuItemHoverOut();
+    animationCtx.handleMenuItemHoverOut();
   }, [animationCtx]);
 
   return (
@@ -22,9 +24,7 @@ export default function MenuItem({ title, gridClassName }: MenuItemProps) {
       className={
         gridClassName +
         `${
-          animationCtx?.isTitleAnimationComplete
-            ? " cursor-pointer"
-            : " pointer-events-none"
+          isTitleAnimationComplete ? " cursor-pointer" : " pointer-events-none"
         }`
       }
       onMouseEnter={handleHover}

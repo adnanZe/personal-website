@@ -75,6 +75,10 @@ export function AnimationContextProvider({
 
   const handleMenuItemHoverOut = useCallback(() => {
     setMenuItemHovered(null);
+
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
   }, []);
 
   return (
