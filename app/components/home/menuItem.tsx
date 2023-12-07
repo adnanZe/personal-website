@@ -33,9 +33,9 @@ export default function MenuItem({ title, gridClassName }: MenuItemProps) {
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverOut}>
       <div className="h-full w-full animate-elevateContainer">
-        <div className="h-full w-full bg-neutral-800 rounded-lg bg-opacity-60 flex items-end p-5 backdrop-blur hover:bg-neutral-950 hover:bg-opacity-60 transition ease-in-out duration-500">
+        <div className="h-full w-full bg-neutral-800 rounded-lg bg-opacity-60 flex items-end p-2 sm:p-5 backdrop-blur hover:bg-neutral-950 hover:bg-opacity-60 transition ease-in-out duration-500">
           <span
-            className={`text-xl ${
+            className={`text-base absolute sm:relative sm:text-lg lg:text-xl ${
               isTitleAnimationComplete ? "inline-block" : "hidden"
             }`}>
             {isMenuItemHovered || isMenuItemFinishedAnimation ? (
