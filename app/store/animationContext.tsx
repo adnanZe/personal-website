@@ -11,7 +11,7 @@ import {
   ANIMATE_MS_MENU as ANIMATION_DURATION_MENU,
   ANIMATE_MS_HOVER_MENU_DELAY as ANIMATION_DURATION_HOVER_MENU_DELAY,
   ANIMATE_MS_MENU_ITEMS_START as ANIMATION_DURATION_MENU_ITEMS_START,
-} from "../constants/animationSettings";
+} from "../_constants/animationSettings";
 
 interface AnimationContextModel {
   menuItemHovered: string | null;

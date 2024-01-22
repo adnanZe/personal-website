@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FIRST_NAME, LAST_NAME } from "../../constants/name";
+import { FIRST_NAME, LAST_NAME } from "../../_constants/name";
 import AnimationContext from "../../store/animationContext";
 import AnimatedText from "../animatedText";
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./styles/globals.css";
-import { MAIN_FONT } from "./constants/fonts";
-import { FIRST_NAME, LAST_NAME } from "./constants/name";
+import { MAIN_FONT } from "./_constants/fonts";
+import { FIRST_NAME, LAST_NAME } from "./_constants/name";
 
 export const metadata: Metadata = {
   title: `${FIRST_NAME} ${LAST_NAME} | Frontend Developer`,

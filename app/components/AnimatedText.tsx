@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import { MAIN_FONT_TITLE } from "@/app/constants/fonts";
+import { MAIN_FONT_TITLE } from "@/app/_constants/fonts";
 
 interface AnimatedTextProps {
   name: string;

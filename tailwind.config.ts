@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss';
-import { ANIMATE_MS_MENU, ANIMATE_MS_NAME, TRANSITION_TIMING } from './app/constants/animationSettings';
+import { ANIMATE_MS_MENU, ANIMATE_MS_NAME, TRANSITION_TIMING } from './app/_constants/animationSettings';
 
 const config: Config = {
   content: [
