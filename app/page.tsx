@@ -1,7 +1,7 @@
 "use client";
-import { AnimationContextProvider } from "./store/animationContext";
-import MainTitle from "./components/home/mainTitle";
-import MenuItems from "./components/home/menuItems";
+import { AnimationContextProvider } from "./_store/animationContext";
+import MainTitle from "./home/mainTitle";
+import MenuItems from "./home/menuItems";
 
 export default function Home() {
   return (

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./styles/globals.css";
+import "./_styles/globals.css";
 import { MAIN_FONT } from "./_constants/fonts";
 import { FIRST_NAME, LAST_NAME } from "./_constants/name";
 

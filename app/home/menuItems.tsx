@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import AnimationContext from "../../store/animationContext";
+import AnimationContext from "../_store/animationContext";
 import MenuItem from "./menuItem";
 
 export default function MenuItems() {
