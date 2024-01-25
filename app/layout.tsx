@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./_styles/globals.css";
 import { MAIN_FONT } from "./_constants/fonts";
 import { FIRST_NAME, LAST_NAME } from "./_constants/name";
-import Menu from "./components/menu";
+import Menu from "./_components/menu";
 import React from "react";
 
 export const metadata: Metadata = {

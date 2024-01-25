@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { FIRST_NAME, LAST_NAME } from "../_constants/name";
 import AnimationContext from "../_store/animationContext";
-import AnimatedText from "../components/animatedText";
+import AnimatedText from "../_components/animatedText";
 
 export default function MainTitle() {
   const animationCtx = useContext(AnimationContext);

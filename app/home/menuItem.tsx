@@ -1,6 +1,6 @@
 import { useCallback, useContext } from "react";
 import AnimationContext from "../_store/animationContext";
-import AnimatedText from "../components/animatedText";
+import AnimatedText from "../_components/animatedText";
 import Link from "next/link";
 
 interface MenuItemProps {
