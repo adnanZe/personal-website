@@ -3,21 +3,16 @@ import "./_styles/globals.css";
 import { MAIN_FONT } from "./_constants/fonts";
 import { FIRST_NAME, LAST_NAME } from "./_constants/name";
 import Menu from "./_components/menu";
-import React from "react";
+import { ReactNode, isValidElement } from "react";
 
 export const metadata: Metadata = {
   title: `${FIRST_NAME} ${LAST_NAME} | Frontend Developer`,
   description: "Frontend Developer based in Bucharest, Romania",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   const isRoot =
-    React.isValidElement(children) &&
-    children.props.childPropSegment === "__PAGE__";
+    isValidElement(children) && children.props.childPropSegment === "__PAGE__";
 
   return (
     <html lang="en">

@@ -1,6 +1,5 @@
 "use client";
 import { usePathname } from "next/navigation";
-import React from "react";
 import MenuListItem from "./menuListItem";
 import { LINKS } from "../_constants/path";
 
