@@ -4,9 +4,9 @@ import MenuItems from "./menuItems";
 
 export default function HomeComponents() {
   return (
-    <>
+    <section>
       <MainTitle />
       <MenuItems />
-    </>
+    </section>
   );
 }
